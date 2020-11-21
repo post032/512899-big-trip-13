@@ -1,7 +1,7 @@
 # Проект «Большое путешествие» [![Build status][travis-image]][travis-url]
 
 * Студент: [Елена Ордина](https://up.htmlacademy.ru/ecmascript/13/user/512899).
-* Наставник: `Неизвестно`.
+* Наставник: [Антон Евдокимов](https://htmlacademy.ru/profile/id1398023).
 
 ---
 
