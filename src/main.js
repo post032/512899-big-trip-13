@@ -1,10 +1,10 @@
-import {createRouteInfoTemplate} from "./view/route-info.js";
-import {createPriceTemplate} from "./view/price";
-import {createFilterTemplate} from "./view/filter";
-import {createMenuTemplate} from "./view/menu";
-import {createSortTemplate} from "./view/sort";
-import {createFormEditTemplate} from "./view/edit-point";
-import {createPointTemplate} from "./view/point";
+import {createRouteInfoTemplate} from './view/route-info.js';
+import {createPriceTemplate} from './view/price';
+import {createFilterTemplate} from './view/filter';
+import {createMenuTemplate} from './view/menu';
+import {createSortTemplate} from './view/sort';
+import {createFormEditTemplate} from './view/edit-point';
+import {createPointTemplate} from './view/point';
 
 const render = (container, template, place) => {
   container.insertAdjacentHTML(place, template);
@@ -26,6 +26,6 @@ render(TRIP_CONTROL, createMenuTemplate(), `afterBegin`);
 render(TRIP_EVENTS, createSortTemplate(), `afterEnd`);
 render(TRIP_EVENTS_LISTS, createFormEditTemplate(), `afterBegin`);
 for (let i = 0; i < TASK_COUNT; i++) {
-  render(TRIP_EVENTS_LISTS, createPointTemplate(), `beforeend`);
+  render(TRIP_EVENTS_LISTS, createPointTemplate(), `beforeEnd`);
 }
 
