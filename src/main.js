@@ -3,8 +3,7 @@ import {createPriceTemplate} from './view/price';
 import {createFilterTemplate} from './view/filter';
 import {createMenuTemplate} from './view/menu';
 import {createSortTemplate} from './view/sort';
-// import {createEditPointTemplate} from './view/edit-point';
-import {createAddPointTemplate} from './view/add-point';
+import {createEditPointTemplate} from './view/edit-point';
 import {createPointTemplate} from './view/point';
 
 const render = (container, template, place) => {
@@ -25,8 +24,7 @@ render(tripInfo, createRouteInfoTemplate(), `afterBegin`);
 render(tripControl, createFilterTemplate(), `afterBegin`);
 render(tripControl, createMenuTemplate(), `afterBegin`);
 render(tripEvents, createSortTemplate(), `afterEnd`);
-render(tripEventsLists, createAddPointTemplate(), `afterBegin`);
-// render(tripEventsLists, createEditPointTemplate(), `afterBegin`);
+render(tripEventsLists, createEditPointTemplate(), `afterBegin`);
 for (let i = 0; i < TASK_COUNT; i++) {
   render(tripEventsLists, createPointTemplate(), `beforeEnd`);
 }
