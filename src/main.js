@@ -1,4 +1,4 @@
-import {createRouteInfoTemplate} from './view/route-info.js';
+import {createRouteInfoTemplate} from './view/route-info';
 import {createPriceTemplate} from './view/price';
 import {createFilterTemplate} from './view/filter';
 import {createMenuTemplate} from './view/menu';
