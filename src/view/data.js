@@ -91,3 +91,14 @@ export let eventOfferSelectionArray = [
     price: 40
   }
 ];
+
+export let eventInputDestination = [
+  {
+    value: `Amsterdam`
+  },
+  {
+    value: `Geneva`
+  },
+  {
+    value: `Chamonix`
+  }];

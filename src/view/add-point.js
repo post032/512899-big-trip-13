@@ -15,7 +15,7 @@ export const createAddPointTemplate = () =>
           <div class="event__type-list">
             <fieldset class="event__type-group">
               <legend class="visually-hidden">Event type</legend>
-              ${arrayEventType.map(event => `<div class="event__type-item">
+              ${arrayEventType.map((event) => `<div class="event__type-item">
                     <input id="event-type-${event.id}" class="event__type-input  visually-hidden" type="radio" name="event-type" value="${event.name}">
                     <label class="event__type-label  event__type-label--taxi" for="event-type-taxi-1">${event.name}</label>
                    </div>`)};
@@ -59,7 +59,7 @@ export const createAddPointTemplate = () =>
           <h3 class="event__section-title  event__section-title--offers">Offers</h3>
 
           <div class="event__available-offers">
-            ${eventOfferSelectionArray.map(event => `<div class="event__offer-selector">
+            ${eventOfferSelectionArray.map((event) => `<div class="event__offer-selector">
               <input class="event__offer-checkbox  visually-hidden" id="event-offer-${event.id}" type="checkbox" name="event-offer-luggage" ${event.checked}>
               <label class="event__offer-label" for="event-offer-${event.id}">
                 <span class="event__offer-title">${event.name}</span>
@@ -75,7 +75,7 @@ export const createAddPointTemplate = () =>
 
           <div class="event__photos-container">
             <div class="event__photos-tape">
-            ${arrayImg.map(event =>`<img class="event__photo" src="img/photos/${event.img}.jpg" alt="Event photo">`)};
+            ${arrayImg.map((event) =>`<img class="event__photo" src="img/photos/${event.img}.jpg" alt="Event photo">`)};
             </div>
           </div>
         </section>
