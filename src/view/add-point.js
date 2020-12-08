@@ -1,6 +1,4 @@
-import {arrayEventType} from './data';
-import {eventOfferSelectionArray} from './data';
-import {arrayImg} from './data';
+import {transports, offers, cities, images} from './data';
 export const createAddPointTemplate = () =>
   `<li class="trip-events__item">
     <form class="event event--edit" action="#" method="post">
@@ -15,7 +13,7 @@ export const createAddPointTemplate = () =>
           <div class="event__type-list">
             <fieldset class="event__type-group">
               <legend class="visually-hidden">Event type</legend>
-              ${arrayEventType.map((event) => `<div class="event__type-item">
+              ${transports.map((event) => `<div class="event__type-item">
                     <input id="event-type-${event.id}" class="event__type-input  visually-hidden" type="radio" name="event-type" value="${event.name}">
                     <label class="event__type-label  event__type-label--taxi" for="event-type-taxi-1">${event.name}</label>
                    </div>`)};
@@ -29,9 +27,7 @@ export const createAddPointTemplate = () =>
           </label>
           <input class="event__input  event__input--destination" id="event-destination-1" type="text" name="event-destination" value="Geneva" list="destination-list-1">
           <datalist id="destination-list-1">
-            <option value="Amsterdam"></option>
-            <option value="Geneva"></option>
-            <option value="Chamonix"></option>
+            ${cities.map((event) => `<option value="${event.value}"></option>`)};
           </datalist>
         </div>
 
@@ -59,7 +55,7 @@ export const createAddPointTemplate = () =>
           <h3 class="event__section-title  event__section-title--offers">Offers</h3>
 
           <div class="event__available-offers">
-            ${eventOfferSelectionArray.map((event) => `<div class="event__offer-selector">
+            ${offers.map((event) => `<div class="event__offer-selector">
               <input class="event__offer-checkbox  visually-hidden" id="event-offer-${event.id}" type="checkbox" name="event-offer-luggage" ${event.checked}>
               <label class="event__offer-label" for="event-offer-${event.id}">
                 <span class="event__offer-title">${event.name}</span>
@@ -75,7 +71,7 @@ export const createAddPointTemplate = () =>
 
           <div class="event__photos-container">
             <div class="event__photos-tape">
-            ${arrayImg.map((event) =>`<img class="event__photo" src="img/photos/${event.img}.jpg" alt="Event photo">`)};
+            ${images.map((event) =>`<img class="event__photo" src="img/photos/${event.img}.jpg" alt="Event photo">`)};
             </div>
           </div>
         </section>

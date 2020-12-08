@@ -1,4 +1,4 @@
-export let arrayEventType = [
+export let transports = [
   {
     id: `taxi-1`,
     name: `Taxi`
@@ -42,7 +42,7 @@ export let arrayEventType = [
   }
 ];
 
-export let arrayImg = [
+export let images = [
   {
     img: 1
   },
@@ -59,7 +59,7 @@ export let arrayImg = [
     img: 5
   }];
 
-export let eventOfferSelectionArray = [
+export let offers = [
   {
     checked: `checked=""`,
     id: `luggage-1`,
@@ -92,7 +92,7 @@ export let eventOfferSelectionArray = [
   }
 ];
 
-export let eventInputDestination = [
+export let cities = [
   {
     value: `Amsterdam`
   },
