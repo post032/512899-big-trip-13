@@ -42,7 +42,7 @@ export const transports = [
   }
 ];
 
-export const images = [1,2,3,4,5];
+export const images = [1, 2, 3, 4, 5];
 
 export const offers = [
   {
@@ -77,5 +77,5 @@ export const offers = [
   }
 ];
 
-export const cities = [`Amsterdam`,`Geneva`,`Chamonix`];
-export const filters = [`Day`,`Event`,`Time`,`Price`,`Offers`];
+export const cities = [`Amsterdam`, `Geneva`, `Chamonix`];
+export const filters = [`Day`, `Event`, `Time`, `Price`, `Offers`];
