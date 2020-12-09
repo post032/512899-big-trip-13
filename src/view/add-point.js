@@ -14,9 +14,9 @@ export const createAddPointTemplate = () =>
             <fieldset class="event__type-group">
               <legend class="visually-hidden">Event type</legend>
               ${transports.map((transport) => `<div class="event__type-item">
-                    <input id="event-type-${transport.id}" class="event__type-input  visually-hidden" type="radio" name="event-type" value="${transport.name}">
-                    <label class="event__type-label  event__type-label--taxi" for="event-type-taxi-1">${transport.name}</label>
-                   </div>`)};
+                <input id="event-type-${transport.id}" class="event__type-input  visually-hidden" type="radio" name="event-type" value="${transport.name}">
+                <label class="event__type-label  event__type-label--taxi" for="event-type-taxi-1">${transport.name}</label>
+              </div>`)};
             </fieldset>
           </div>
         </div>
