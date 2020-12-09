@@ -1,45 +1,44 @@
 export const transports = [
   {
     id: `taxi-1`,
-    name: `Taxi`
-
+    name: `Taxi`,
   },
   {
     id: `bus-1`,
-    name: `Bus`
+    name: `Bus`,
   },
   {
     id: `train-1`,
-    name: `Train`
+    name: `Train`,
   },
   {
     id: `ship-1`,
-    name: `Ship`
+    name: `Ship`,
   },
   {
     id: `transport-1`,
-    name: `Transport`
+    name: `Transport`,
   },
   {
     id: `drive-1`,
-    name: `Drive`
+    name: `Drive`,
   },
   {
     id: `flight-1`,
-    name: `Flight`
+    name: `Flight`,
   },
   {
     id: `check-in-1`,
-    name: `Check-in`
+    name: `Check-in`,
   },
   {
     id: `sightseeing-1`,
-    name: `Sightseeing`
+    name: `Sightseeing`,
   },
   {
     id: `restaurant-1`,
-    name: `Restaurant`
-  }
+    name: `Restaurant`,
+  },
 ];
 
 export const images = [1, 2, 3, 4, 5];
@@ -49,53 +48,69 @@ export const offers = [
     checked: `checked=""`,
     id: `luggage-1`,
     name: `Add luggage`,
-    price: 30
+    price: 30,
   },
   {
     checked: ``,
     id: `comfort-1`,
     name: `Switch to comfort class`,
-    price: 100
+    price: 100,
   },
   {
     checked: ``,
     id: `meal-1`,
     mame: `Add meal`,
-    price: 15
+    price: 15,
   },
   {
     checked: ``,
     id: `seats-1`,
     name: `Choose seats`,
-    price: 5
+    price: 5,
   },
   {
     checked: ``,
     id: `train-1`,
     name: `Travel by train`,
-    price: 40
-  }
+    price: 40,
+  },
 ];
 
 export const cities = [`Amsterdam`, `Geneva`, `Chamonix`];
-export const filters = [
+export const sorts = [
   {
     checked: `checked=""`,
-    name: `Day`
+    name: `Day`,
   },
   {
     checked: ``,
-    name: `Event`
+    name: `Event`,
   },
   {
     checked: ``,
-    name: `Time`
+    name: `Time`,
   },
   {
     checked: ``,
-    name: `Price`
+    name: `Price`,
   },
   {
     checked: ``,
-    name: `Offers`
-  }];
+    name: `Offers`,
+  },
+];
+
+export const filters = [
+  {
+    id: `everything`,
+    name: `Everything`,
+  },
+  {
+    id: `future`,
+    name: `Future`,
+  },
+  {
+    id: `past`,
+    name: `Past`,
+  }
+];

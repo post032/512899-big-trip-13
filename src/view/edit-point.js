@@ -1,4 +1,4 @@
-import {transports, offers, cities} from './data';
+import {transports, offers, cities} from "./data";
 export const createEditPointTemplate = () =>
   `<li class="trip-events__item">
     <form class="event event--edit" action="#" method="post">
@@ -76,4 +76,3 @@ export const createEditPointTemplate = () =>
       </section>
     </form>
   </li>`;
-
