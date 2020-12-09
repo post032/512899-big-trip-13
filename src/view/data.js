@@ -1,4 +1,4 @@
-export let transports = [
+export const transports = [
   {
     id: `taxi-1`,
     name: `Taxi`
@@ -42,24 +42,9 @@ export let transports = [
   }
 ];
 
-export let images = [
-  {
-    img: 1
-  },
-  {
-    img: 2
-  },
-  {
-    img: 3
-  },
-  {
-    img: 4
-  },
-  {
-    img: 5
-  }];
+export const images = [1,2,3,4,5];
 
-export let offers = [
+export const offers = [
   {
     checked: `checked=""`,
     id: `luggage-1`,
@@ -92,13 +77,5 @@ export let offers = [
   }
 ];
 
-export let cities = [
-  {
-    value: `Amsterdam`
-  },
-  {
-    value: `Geneva`
-  },
-  {
-    value: `Chamonix`
-  }];
+export const cities = [`Amsterdam`,`Geneva`,`Chamonix`];
+export const filters = [`Day`,`Event`,`Time`,`Price`,`Offers`];
