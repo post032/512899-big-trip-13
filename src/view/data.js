@@ -78,4 +78,24 @@ export const offers = [
 ];
 
 export const cities = [`Amsterdam`, `Geneva`, `Chamonix`];
-export const filters = [`Day`, `Event`, `Time`, `Price`, `Offers`];
+export const filters = [
+  {
+    checked: `checked=""`,
+    name: `Day`
+  },
+  {
+    checked: ``,
+    name: `Event`
+  },
+  {
+    checked: ``,
+    name: `Time`
+  },
+  {
+    checked: ``,
+    name: `Price`
+  },
+  {
+    checked: ``,
+    name: `Offers`
+  }];
