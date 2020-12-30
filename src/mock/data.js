@@ -17,13 +17,6 @@ const generateTypePoint = () => {
   const randomIndex = getRandomIntenger(0, typePoints.length - 1);
   return typePoints[randomIndex];
 };
-const images = [1, 2, 3, 4, 5];
-function getRandomInt(min, max) {
-  min = Math.ceil(1);
-  max = Math.floor(images.length);
-  let numberRandom = Math.floor(Math.random() * (max - min)) + min;
-  return numberRandom;
-}
 
 const prices = [];
 const PRICES_COUNT = 210;
@@ -62,7 +55,7 @@ export const generateRoutPoint = () => {
     cities: generateCities(),
     description: generateDescription(),
     offers: generateOffers(),
-    isFavorite: Boolean(getRandomIntenger(0,1))
+    isFavorite: Boolean(getRandomIntenger(0, 1))
   };
 };
 
