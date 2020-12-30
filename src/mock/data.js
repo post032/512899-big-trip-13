@@ -25,12 +25,6 @@ function getRandomInt(min, max) {
   return numberRandom;
 }
 
-// console.log(getRandomInt())
-//
-// const generateImg = () => {
-//   return images[];
-// };
-
 const prices = [];
 const PRICES_COUNT = 210;
 for (let i = 10; i < PRICES_COUNT; i = i + 10) {
