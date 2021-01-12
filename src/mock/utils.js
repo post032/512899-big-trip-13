@@ -4,7 +4,7 @@ export const getRandomIntenger = (a = 0, b = 1) => {
 
   return Math.floor(lower + Math.random() * (upper - lower + 1));
 };
-export const generateCities = () => {
+export const generateCity = () => {
   const cities = [`Amsterdam`, `Geneva`, `Chamonix`];
   const randomIndex = getRandomIntenger(0, cities.length - 1);
   return cities[randomIndex];
@@ -26,6 +26,18 @@ export const generatePrice = () => {
   return prices[randomPriceIndex];
 };
 
+
+
+export const getRandomDuration = () => {
+  const startTime = +new Date(+(new Date()) - Math.floor(Math.random() * 10000000000));
+  const maxEndTime = +new Date(startTime).setHours(42);
+  const endTime = +new Date(startTime + Math.random() * (maxEndTime - startTime));
+  return {
+    startTime,
+    endTime
+  };
+};
+
 export const generateOffers = () => {
   const names = [`Lunch in city`, `Book tickets`, `Add breakfast`, `Rent a car`, `Switch to comfort`, `Add luggage`, `Order Uber`];
   const OFFERS_COUNT = 3;
@@ -34,7 +46,7 @@ export const generateOffers = () => {
     const randomIndex = getRandomIntenger(0, names.length - 1);
     offers.push({
       name: names[randomIndex],
-      price: generatePrice()
+      offersPrice: generatePrice()
     });
   }
   return offers;

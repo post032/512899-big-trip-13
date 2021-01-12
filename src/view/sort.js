@@ -1,4 +1,4 @@
-import {filters} from '../mock/utils';
+import {filters} from '../mock/constant';
 export const createSortTemplate = () =>
   `<form class="trip-events__trip-sort  trip-sort" action="#" method="get">
 ${

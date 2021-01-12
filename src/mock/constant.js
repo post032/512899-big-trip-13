@@ -1,5 +1,4 @@
 export const POINT_COUNT = 3;
-export const EDIT_COUNT = 1;
 export const images = [1, 2, 3, 4, 5];
 
 export const offersItems = [

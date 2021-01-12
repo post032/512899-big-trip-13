@@ -1,14 +1,17 @@
-import {POINT_COUNT, EDIT_COUNT} from "./constant";
-import {generateTypePoint, generateCities, generateDescription, generateOffers, getRandomIntenger} from "./utils";
+import {POINT_COUNT} from "./constant";
+import {generateTypePoint, generateCity, getRandomDuration, generatePrice, generateDescription, generateOffers, getRandomIntenger} from "./utils";
 export const generateRoutPoint = () => {
+  const {startTime, endTime} = getRandomDuration();
   return {
     typePoint: generateTypePoint(),
-    cities: generateCities(),
+    city: generateCity(),
     description: generateDescription(),
     offers: generateOffers(),
+    offersPrice: generatePrice(),
+    startTime,
+    endTime,
     isFavorite: Boolean(getRandomIntenger(0, 1))
   };
 };
 
 export const points = new Array(POINT_COUNT).fill().map(generateRoutPoint);
-export const pointsEdit = new Array(EDIT_COUNT).fill().map(generateRoutPoint);
