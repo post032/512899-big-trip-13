@@ -7,7 +7,7 @@ export const generateRoutPoint = () => {
     city: generateCity(),
     description: generateDescription(),
     offers: generateOffers(),
-    offersPrice: generatePrice(),
+    price: generatePrice(),
     startTime,
     endTime,
     isFavorite: Boolean(getRandomIntenger(0, 1))
