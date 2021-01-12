@@ -1,12 +1,12 @@
-import {transports, offers, cities} from './data';
-export const createEditPointTemplate = () =>
+import {offersItems, cities, transports} from '../mock/constant';
+export const createEditPointTemplate = (point) =>
   `<li class="trip-events__item">
     <form class="event event--edit" action="#" method="post">
       <header class="event__header">
         <div class="event__type-wrapper">
           <label class="event__type  event__type-btn" for="event-type-toggle-1">
             <span class="visually-hidden">Choose event type</span>
-            <img class="event__type-icon" width="17" height="17" src="img/icons/flight.png" alt="Event type icon">
+            <img class="event__type-icon" width="17" height="17" src="img/icons/${point.typePoint}.png" alt="Event type icon">
           </label>
           <input class="event__type-toggle  visually-hidden" id="event-type-toggle-1" type="checkbox">
 
@@ -14,20 +14,20 @@ export const createEditPointTemplate = () =>
             <fieldset class="event__type-group">
               <legend class="visually-hidden">Event type</legend>
               ${transports.map((transport) => `<div class="event__type-item">
-                    <input id="event-type-${transport.id}" class="event__type-input  visually-hidden" type="radio" name="event-type" value="${transport.name}">
-                    <label class="event__type-label  event__type-label--taxi" for="event-type-taxi-1">${transport.name}</label>
-                   </div>`)};
+                    <input id="event-type-${transport.id}-1" class="event__type-input  visually-hidden" type="radio" name="event-type" value="${transport.name}">
+                    <label class="event__type-label  event__type-label--${transport.id}" for="event-type-${transport.id}-1">${transport.name}</label>
+                   </div>`).join(``)}
             </fieldset>
           </div>
         </div>
 
         <div class="event__field-group  event__field-group--destination">
           <label class="event__label  event__type-output" for="event-destination-1">
-            Flight
+            ${point.typePoint}
           </label>
-          <input class="event__input  event__input--destination" id="event-destination-1" type="text" name="event-destination" value="Chamonix" list="destination-list-1">
+          <input class="event__input  event__input--destination" id="event-destination-1" type="text" name="event-destination" value="${point.city}" list="destination-list-1">
           <datalist id="destination-list-1">
-          ${cities.map((city) => `<option value="${city}"></option>`)};
+          ${cities.map((city) => `<option value="${city}"></option>`).join(``)}
           </datalist>
         </div>
 
@@ -44,7 +44,7 @@ export const createEditPointTemplate = () =>
             <span class="visually-hidden">Price</span>
             €
           </label>
-          <input class="event__input  event__input--price" id="event-price-1" type="text" name="event-price" value="160">
+          <input class="event__input  event__input--price" id="event-price-1" type="text" name="event-price" value="${point.price}">
         </div>
 
         <button class="event__save-btn  btn  btn--blue" type="submit">Save</button>
@@ -58,20 +58,20 @@ export const createEditPointTemplate = () =>
           <h3 class="event__section-title  event__section-title--offers">Offers</h3>
 
           <div class="event__available-offers">
-            ${offers.map((offer) => `<div class="event__offer-selector">
-              <input class="event__offer-checkbox  visually-hidden" id="event-offer-${offer.id}" type="checkbox" name="event-offer-luggage" ${offer.checked}>
-              <label class="event__offer-label" for="event-offer-${offer.id}">
-                <span class="event__offer-title">${offer.name}</span>
+            ${offersItems.map((offerItem) => `<div class="event__offer-selector">
+              <input class="event__offer-checkbox  visually-hidden" id="event-offer-${offerItem.id}" type="checkbox" name="event-offer-luggage" ${offerItem.checked}>
+              <label class="event__offer-label" for="event-offer-${offerItem.id}">
+                <span class="event__offer-title">${offerItem.name}</span>
                 +€&nbsp;
-                <span class="event__offer-price">${offer.price}</span>
+                <span class="event__offer-price">${offerItem.price}</span>
               </label>
-            </div>`)}
+            </div>`).join(``)}
           </div>
         </section>
 
         <section class="event__section  event__section--destination">
           <h3 class="event__section-title  event__section-title--destination">Destination</h3>
-          <p class="event__destination-description">Chamonix-Mont-Blanc (usually shortened to Chamonix) is a resort area near the junction of France, Switzerland and Italy. At the base of Mont Blanc, the highest summit in the Alps, it's renowned for its skiing.</p>
+          <p class="event__destination-description">${point.description}</p>
         </section>
       </section>
     </form>

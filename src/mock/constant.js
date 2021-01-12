@@ -1,50 +1,7 @@
-export const transports = [
-  {
-    id: `taxi-1`,
-    name: `Taxi`
-
-  },
-  {
-    id: `bus-1`,
-    name: `Bus`
-  },
-  {
-    id: `train-1`,
-    name: `Train`
-  },
-  {
-    id: `ship-1`,
-    name: `Ship`
-  },
-  {
-    id: `transport-1`,
-    name: `Transport`
-  },
-  {
-    id: `drive-1`,
-    name: `Drive`
-  },
-  {
-    id: `flight-1`,
-    name: `Flight`
-  },
-  {
-    id: `check-in-1`,
-    name: `Check-in`
-  },
-  {
-    id: `sightseeing-1`,
-    name: `Sightseeing`
-  },
-  {
-    id: `restaurant-1`,
-    name: `Restaurant`
-  }
-];
-
+export const POINT_COUNT = 3;
 export const images = [1, 2, 3, 4, 5];
 
-export const offers = [
+export const offersItems = [
   {
     checked: `checked=""`,
     id: `luggage-1`,
@@ -77,6 +34,43 @@ export const offers = [
   }
 ];
 
+export const transports = [
+  {
+    id: `taxi`,
+    name: `Taxi`
+  },
+  {
+    id: `bus`,
+    name: `Bus`
+  },
+  {
+    id: `train`,
+    name: `train`
+  },
+  {
+    id: `ship`,
+    name: `Ship`
+  },
+  {
+    id: `transport`,
+    name: `Transport`
+  },
+  {
+    id: `flight`,
+    name: `Flight`
+  },
+  {
+    id: `check-in`,
+    name: `Check-in`
+  },
+  {
+    id: `sightseeing`,
+    name: `Sightseeing`
+  },
+  {
+    id: `restaurant`,
+    name: `Restaurant`
+  }];
 export const cities = [`Amsterdam`, `Geneva`, `Chamonix`];
 export const filters = [
   {

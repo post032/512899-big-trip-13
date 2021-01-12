@@ -1,4 +1,4 @@
-import {transports, offers, cities, images} from './data';
+import {transports, offersItems, cities, images} from '../mock/utils';
 export const createAddPointTemplate = () =>
   `<li class="trip-events__item">
     <form class="event event--edit" action="#" method="post">
@@ -55,12 +55,12 @@ export const createAddPointTemplate = () =>
           <h3 class="event__section-title  event__section-title--offers">Offers</h3>
 
           <div class="event__available-offers">
-            ${offers.map((offer) => `<div class="event__offer-selector">
-              <input class="event__offer-checkbox  visually-hidden" id="event-offer-${offer.id}" type="checkbox" name="event-offer-luggage" ${offer.checked}>
-              <label class="event__offer-label" for="event-offer-${offer.id}">
-                <span class="event__offer-title">${offer.name}</span>
+            ${offersItems.map((offerItem) => `<div class="event__offer-selector">
+              <input class="event__offer-checkbox  visually-hidden" id="event-offer-${offerItem.id}" type="checkbox" name="event-offer-luggage" ${offerItem.checked}>
+              <label class="event__offer-label" for="event-offer-${offerItem.id}">
+                <span class="event__offer-title">${offerItem.name}</span>
                 +€&nbsp;
-                <span class="event__offer-price">${offer.price}</span>
+                <span class="event__offer-price">${offerItem.price}</span>
               </label>
             </div>`)}
         </section>

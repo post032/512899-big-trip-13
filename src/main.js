@@ -5,12 +5,11 @@ import {createMenuTemplate} from './view/menu';
 import {createSortTemplate} from './view/sort';
 import {createEditPointTemplate} from './view/edit-point';
 import {createPointTemplate} from './view/point';
-
+import {points} from "./mock/data";
 const render = (container, template, place) => {
   container.insertAdjacentHTML(place, template);
 };
 
-const TASK_COUNT = 3;
 
 const headerElement = document.querySelector(`header`);
 const tripInfo = headerElement.querySelector(`.trip-info`);
@@ -24,8 +23,7 @@ render(tripInfo, createRouteInfoTemplate(), `afterBegin`);
 render(tripControl, createFilterTemplate(), `afterBegin`);
 render(tripControl, createMenuTemplate(), `afterBegin`);
 render(tripEvents, createSortTemplate(), `afterEnd`);
-render(tripEventsLists, createEditPointTemplate(), `afterBegin`);
-for (let i = 0; i < TASK_COUNT; i++) {
-  render(tripEventsLists, createPointTemplate(), `beforeEnd`);
-}
-
+render(tripEventsLists, createEditPointTemplate(points[0]), `afterBegin`);
+points.forEach((point) => {
+  render(tripEventsLists, createPointTemplate(point), `beforeEnd`);
+});
