@@ -80,5 +80,5 @@ export const renderElement = (container, element, place) => {
     case RenderPosition.BEFOREEND:
       container.append(element);
       break;
-  };
+  }
 };
