@@ -52,9 +52,6 @@ render(tripInfo, new RoutInfoView().getElement(), RenderPosition.AFTERBEGIN);
 render(tripControl, new SiteMenuView().getElement(), RenderPosition.AFTERBEGIN);
 render(tripControl, new FilterView().getElement(), RenderPosition.BEFOREEND);
 render(tripEvents, new SortView().getElement(), RenderPosition.AFTERBEGIN);
-// render(tripEventsLists, new EditPointView(points[0]).getElement(), RenderPosition.AFTERBEGIN);
-// renderPoint(tripEventsLists, new EditPointView(points[0]).getElement(), RenderPosition.AFTERBEGIN);
 points.forEach((point) => {
-  // render(tripEventsLists, new PointView(point).getElement(), RenderPosition.BEFOREEND);
   renderPoint(tripEventsLists, point);
 });
