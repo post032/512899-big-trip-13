@@ -30,6 +30,11 @@ const renderPoint = (tripEventsLists, point) => {
     document.addEventListener(`keydown`, onEscKeyDown);
   });
 
+  editPointComponent.getElement().querySelector(`.event__rollup-btn`).addEventListener(`click`, () => {
+    replacePointToEditPoint();
+    document.removeEventListener(`keydown`, onEscKeyDown);
+  });
+
   editPointComponent.getElement().querySelector(`form`).addEventListener(`submit`, (evt) => {
     evt.preventDefault();
     replacePointToEditPoint();
