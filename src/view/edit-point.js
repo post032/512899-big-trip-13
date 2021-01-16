@@ -1,5 +1,6 @@
 import {offersItems, cities, transports} from '../mock/constant';
-export const createEditPointTemplate = (point) =>
+import {createElement} from "../mock/utils";
+const createEditPointTemplate = (point) =>
   `<li class="trip-events__item">
     <form class="event event--edit" action="#" method="post">
       <header class="event__header">
@@ -77,3 +78,22 @@ export const createEditPointTemplate = (point) =>
     </form>
   </li>`;
 
+export default class EditPoint {
+  constructor(point) {
+    this._point = point;
+    this._element = null;
+  }
+  getTemplate() {
+    return createEditPointTemplate(this._point);
+  }
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
+    }
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
+}

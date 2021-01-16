@@ -1,11 +1,13 @@
 import dayjs from "dayjs";
-export const createPointTemplate = (point) => {
+import {createElement} from "../mock/utils";
+import {points} from "../mock/data";
+const createPointTemplate = (point) => {
   const {typePoint, isFavorite, price, offers, city} = point;
   const startDate = dayjs(point.startTime);
   const startDayForm = startDate.format(`MMM D`).toUpperCase();
   const startDateAttr = startDate.format(`YYYY-MM-DD`);
   const favoriteClassName = isFavorite ? `event__favorite-btn--active` : ``;
-  return (`<li class="trip-events__item">
+  return `<li class="trip-events__item">
     <div class="event">
         <time class="event__date" datetime="${startDateAttr}">${startDayForm}</time>
         <div class="event__type">
@@ -41,5 +43,25 @@ export const createPointTemplate = (point) => {
           <span class="visually-hidden">Open event</span>
         </button>
       </div>
-    </li>`);
+    </li>`;
 };
+
+export default class Point {
+  constructor(point) {
+    this._point = point;
+    this._element = null;
+  }
+  getTemplate() {
+    return createPointTemplate(this._point);
+  }
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
+    }
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
+}
