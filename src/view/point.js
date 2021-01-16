@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import {createElement} from "../mock/utils";
-import {points} from "../mock/data";
 const createPointTemplate = (point) => {
   const {typePoint, isFavorite, price, offers, city} = point;
   const startDate = dayjs(point.startTime);
