@@ -42,7 +42,7 @@ const renderPoint = (tripEventsLists, point) => {
   });
 
   render(tripEventsLists, pointComponent.getElement(), RenderPosition.AFTERBEGIN);
-}
+};
 
 const headerElement = document.querySelector(`header`);
 const tripInfo = headerElement.querySelector(`.trip-info`);
