@@ -1,4 +1,4 @@
-export const POINT_COUNT = 3;
+export const POINT_COUNT = 4;
 export const images = [1, 2, 3, 4, 5];
 
 export const offersItems = [
@@ -93,3 +93,5 @@ export const filters = [
     checked: ``,
     name: `Offers`
   }];
+
+export const filtersTime = [`everything`, `future`, `past`];

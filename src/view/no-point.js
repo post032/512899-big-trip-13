@@ -1,16 +1,14 @@
 import {createElement} from "../mock/utils";
 
-const createPriceTemplate = () =>
-  `<p class="trip-info__cost">
-              Total: €&nbsp;<span class="trip-info__cost-value">1230</span>
-            </p>`;
+const createNoPoint = () =>
+  `<p class="trip-events__msg">Click New Event to create your first point</p>`;
 
-export default class Price {
+export default class NoPoint {
   constructor() {
     this._element = null;
   }
   getTemplate() {
-    return createPriceTemplate();
+    return createNoPoint();
   }
   getElement() {
     if (!this._element) {
