@@ -7,9 +7,11 @@ import EditPointView from './view/edit-point';
 import PointView from './view/point';
 import {points} from "./mock/data";
 import {render, RenderPosition} from "./mock/utils";
+import NoPointView from "./view/no-point";
 
 const renderPoint = (tripEventsLists, point) => {
   const pointComponent = new PointView(point);
+  // const noPointComponent = new NoPointView(point);
   const editPointComponent = new EditPointView(point);
   const replaceEditPointToPoint = () => {
     tripEventsLists.replaceChild(editPointComponent.getElement(), pointComponent.getElement());
@@ -40,7 +42,6 @@ const renderPoint = (tripEventsLists, point) => {
     replacePointToEditPoint();
     document.removeEventListener(`keydown`, onEscKeyDown);
   });
-
   render(tripEventsLists, pointComponent.getElement(), RenderPosition.AFTERBEGIN);
 };
 
@@ -57,6 +58,13 @@ render(tripInfo, new RoutInfoView().getElement(), RenderPosition.AFTERBEGIN);
 render(tripControl, new SiteMenuView().getElement(), RenderPosition.AFTERBEGIN);
 render(tripControl, new FilterView().getElement(), RenderPosition.BEFOREEND);
 render(tripEvents, new SortView().getElement(), RenderPosition.AFTERBEGIN);
-points.forEach((point) => {
-  renderPoint(tripEventsLists, point);
-});
+render(tripEventsLists, new NoPointView().getElement(), RenderPosition.AFTERBEGIN);
+
+if (points.length === 0) {
+  render(tripEventsLists, new NoPointView().getElement(), RenderPosition.AFTERBEGIN);
+} else {
+  points.forEach((point) => {
+    renderPoint(tripEventsLists, point);
+  });
+}
+
