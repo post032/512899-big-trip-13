@@ -11,35 +11,34 @@ import NoPointView from "./view/no-point";
 
 const renderPoint = (tripEventsLists, point) => {
   const pointComponent = new PointView(point);
-  // const noPointComponent = new NoPointView(point);
   const editPointComponent = new EditPointView(point);
-  const replaceEditPointToPoint = () => {
+  const replaceViewToEdit = () => {
     tripEventsLists.replaceChild(editPointComponent.getElement(), pointComponent.getElement());
   };
-  const replacePointToEditPoint = () => {
+  const replaceEditToView = () => {
     tripEventsLists.replaceChild(pointComponent.getElement(), editPointComponent.getElement());
   };
   const onEscKeyDown = (evt) => {
     if (evt.key === `Escape` || evt.key === `Esc`) {
       evt.preventDefault();
-      replacePointToEditPoint();
+      replaceEditToView();
       document.removeEventListener(`keydown`, onEscKeyDown);
     }
   };
 
   pointComponent.getElement().querySelector(`.event__rollup-btn`).addEventListener(`click`, () => {
-    replaceEditPointToPoint();
+    replaceViewToEdit();
     document.addEventListener(`keydown`, onEscKeyDown);
   });
 
   editPointComponent.getElement().querySelector(`.event__rollup-btn`).addEventListener(`click`, () => {
-    replacePointToEditPoint();
+    replaceEditToView();
     document.removeEventListener(`keydown`, onEscKeyDown);
   });
 
   editPointComponent.getElement().querySelector(`form`).addEventListener(`submit`, (evt) => {
     evt.preventDefault();
-    replacePointToEditPoint();
+    replaceEditToView();
     document.removeEventListener(`keydown`, onEscKeyDown);
   });
   render(tripEventsLists, pointComponent.getElement(), RenderPosition.AFTERBEGIN);

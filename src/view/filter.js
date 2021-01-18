@@ -12,7 +12,6 @@ const createFilterTemplate = () =>
 
 export default class FilterTime {
   constructor() {
-    this._filters = filtersTime;
     this._element = null;
   }
   getTemplate() {
