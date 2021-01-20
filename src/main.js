@@ -26,18 +26,17 @@ const renderPoint = (tripEventsLists, point) => {
     }
   };
 
-  pointComponent.getElement().querySelector(`.event__rollup-btn`).addEventListener(`click`, () => {
+  pointComponent.setEditClickHandler(() => {
     replaceViewToEdit();
     document.addEventListener(`keydown`, onEscKeyDown);
   });
 
-  editPointComponent.getElement().querySelector(`.event__rollup-btn`).addEventListener(`click`, () => {
+  editPointComponent.setEditClickHandler(() => {
     replaceEditToView();
     document.removeEventListener(`keydown`, onEscKeyDown);
   });
 
-  editPointComponent.getElement().querySelector(`form`).addEventListener(`submit`, (evt) => {
-    evt.preventDefault();
+  editPointComponent.setFormSubmitHandler(() => {
     replaceEditToView();
     document.removeEventListener(`keydown`, onEscKeyDown);
   });
