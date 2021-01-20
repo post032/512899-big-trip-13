@@ -6,38 +6,32 @@ import SortView from './view/sort';
 import EditPointView from './view/edit-point';
 import PointView from './view/point';
 import {points} from "./mock/data";
-import {render, RenderPosition} from "./mock/utils";
+import {render, RenderPosition, replace} from "./utils/render";
 import NoPointView from "./view/no-point";
 
 const renderPoint = (tripEventsLists, point) => {
   const pointComponent = new PointView(point);
   const editPointComponent = new EditPointView(point);
-  const replaceViewToEdit = () => {
-    tripEventsLists.replaceChild(editPointComponent.getElement(), pointComponent.getElement());
-  };
-  const replaceEditToView = () => {
-    tripEventsLists.replaceChild(pointComponent.getElement(), editPointComponent.getElement());
-  };
   const onEscKeyDown = (evt) => {
     if (evt.key === `Escape` || evt.key === `Esc`) {
       evt.preventDefault();
-      replaceEditToView();
+      replace(editPointComponent, pointComponent);
       document.removeEventListener(`keydown`, onEscKeyDown);
     }
   };
 
   pointComponent.setEditClickHandler(() => {
-    replaceViewToEdit();
+    replace(editPointComponent, pointComponent);
     document.addEventListener(`keydown`, onEscKeyDown);
   });
 
   editPointComponent.setEditClickHandler(() => {
-    replaceEditToView();
+    replace(pointComponent, editPointComponent);
     document.removeEventListener(`keydown`, onEscKeyDown);
   });
 
   editPointComponent.setFormSubmitHandler(() => {
-    replaceEditToView();
+    replace(pointComponent, editPointComponent);
     document.removeEventListener(`keydown`, onEscKeyDown);
   });
   render(tripEventsLists, pointComponent.getElement(), RenderPosition.AFTERBEGIN);
