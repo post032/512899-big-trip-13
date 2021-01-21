@@ -1,4 +1,4 @@
-import {createElement} from "../mock/utils";
+import AbstractView from "./abstract";
 
 const createRouteInfoTemplate = () =>
   `<div class="trip-info__main">
@@ -8,21 +8,8 @@ const createRouteInfoTemplate = () =>
             </div>
           </section>`;
 
-export default class RoutInfo {
-  constructor() {
-    this._element = null;
-  }
+export default class RoutInfo extends AbstractView {
   getTemplate() {
     return createRouteInfoTemplate();
-  }
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

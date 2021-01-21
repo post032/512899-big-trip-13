@@ -1,5 +1,6 @@
 import {POINT_COUNT} from "./constant";
-import {generateTypePoint, generateCity, getRandomDuration, generatePrice, generateDescription, generateOffers, getRandomIntenger} from "./utils";
+import {generateTypePoint, generateCity, getRandomDuration, generatePrice, generateDescription, generateOffers} from "../utils/point";
+import {getRandomIntenger} from "../utils/common";
 export const generateRoutPoint = () => {
   const {startTime, endTime} = getRandomDuration();
   return {
