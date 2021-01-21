@@ -1,4 +1,4 @@
-import SiteMenuView from './view/menu';
+import MenuView from './view/menu';
 import FilterView from "./view/filter";
 import RoutInfoView from "./view/route-info";
 import PriceView from "./view/price";
@@ -47,7 +47,7 @@ const tripEventsLists = mainElement.querySelector(`.trip-events__list`);
 
 render(tripInfo, new PriceView().getElement(), RenderPosition.AFTERBEGIN);
 render(tripInfo, new RoutInfoView().getElement(), RenderPosition.AFTERBEGIN);
-render(tripControl, new SiteMenuView().getElement(), RenderPosition.AFTERBEGIN);
+render(tripControl, new MenuView().getElement(), RenderPosition.AFTERBEGIN);
 render(tripControl, new FilterView().getElement(), RenderPosition.BEFOREEND);
 render(tripEvents, new SortView().getElement(), RenderPosition.AFTERBEGIN);
 render(tripEventsLists, new NoPointView().getElement(), RenderPosition.AFTERBEGIN);

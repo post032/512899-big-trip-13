@@ -10,7 +10,7 @@ const createFilterTemplate = () =>
       <button class="visually-hidden" type="submit">Accept filter</button>
     </form>`;
 
-export default class FilterTime extends AbstractView {
+export default class Filter extends AbstractView {
   getTemplate() {
     return createFilterTemplate();
   }
